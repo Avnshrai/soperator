@@ -40,7 +40,7 @@ permissions:
 
 jobs:
   pre-build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Harden Runner
@@ -104,7 +104,7 @@ jobs:
         run: echo "cache miss – saved automatically by actions/cache"
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: pre-build
     strategy:
       matrix:
@@ -112,9 +112,9 @@ jobs:
           - arch: amd64
             alt_arch: x86_64
             runner: X64
-          - arch: arm64
-            alt_arch: aarch64
-            runner: ARM64
+          # - arch: arm64
+          #   alt_arch: aarch64
+          #   runner: ARM64
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
@@ -314,7 +314,7 @@ jobs:
 
 
   create-manifest:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build
     steps:
       - name: Checkout repository
