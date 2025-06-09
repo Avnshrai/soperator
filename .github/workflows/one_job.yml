@@ -40,7 +40,7 @@ permissions:
 
 jobs:
   pre-build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Harden Runner
