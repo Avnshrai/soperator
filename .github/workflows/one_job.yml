@@ -193,7 +193,7 @@ jobs:
         with:
           registry: docker.io
           username: avnshrai
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: dckr_pat_EfzPAMF7mELnrqZdl8ykQz-4nwc
 
       - name: Build all images
         run: |
