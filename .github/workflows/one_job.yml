@@ -191,8 +191,8 @@ jobs:
       - name: Log in to the Github Container registry
         uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
+          registry: docker.io
+          username: avnshrai
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build all images
