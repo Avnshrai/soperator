@@ -35,9 +35,9 @@ VERSION               		= $(shell cat VERSION)
 
 IMAGE_VERSION		  = $(VERSION)-$(UBUNTU_VERSION)-slurm$(SLURM_VERSION)
 GO_CONST_VERSION_FILE = internal/consts/version.go
-GITHUB_REPO			  = ghcr.io/nebius/soperator
-NEBIUS_REPO			  = cr.eu-north1.nebius.cloud/soperator
-IMAGE_REPO			  = $(NEBIUS_REPO)
+GITHUB_REPO			  = docker.io
+NEBIUS_REPO			  = avnshrai
+IMAGE_REPO			  = soperator
 
 # For version sync test
 VALUES_VERSION 		  = $(shell $(YQ) '.images.slurmctld' helm/slurm-cluster/values.yaml | awk -F':' '{print $$2}' | awk -F'-' '{print $$1}')
