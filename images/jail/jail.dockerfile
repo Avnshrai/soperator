@@ -8,7 +8,6 @@ ENV LANG=en_US.UTF-8
 ARG ARCH
 # ALT_ARCH has the extended form like: x86_64, aarch64
 ARG ALT_ARCH
-RUN echo 'Acquire::http::Proxy "http://svc_proxy_nonrte_netgrp:jLNgeTuuCdbu9h9kesPaA4iEDrzHvXtR@172.22.13.140:3128";' > /etc/apt/apt.conf.d/90proxy
 RUN apt-get update &&  \
     apt-get install -y --no-install-recommends \
       gnupg2  \
@@ -297,3 +296,4 @@ RUN chmod +x /etc/update-motd.d/*
 
 # Update linker cache
 RUN ldconfig
+RUN echo 'Acquire::http::Proxy "http://svc_proxy_nonrte_netgrp:jLNgeTuuCdbu9h9kesPaA4iEDrzHvXtR@172.22.13.140:3128";' > /etc/apt/apt.conf.d/90proxy
